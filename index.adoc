@@ -1,8 +1,8 @@
 ---
 permalink: index.html
 sidebar: sidebar
-keywords: 
-summary: ''
+keywords: installation, guide
+summary: Installation Guide
 ---
 = Installation Guide
 :icons: font
