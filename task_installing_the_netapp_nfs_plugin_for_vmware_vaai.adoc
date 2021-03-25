@@ -1,8 +1,8 @@
 ---
 permalink: task_installing_the_netapp_nfs_plugin_for_vmware_vaai.html
 sidebar: sidebar
-keywords: 
-summary: 'Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI \(\(VMware vStorage APIs for Array Integration\) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.'
+keywords: install, netapp, nfs, plug-in, vmware, vaai, involve, enabling, enable, netapp, vstorage, api, array, integration, installation, download
+summary: Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI \(\(VMware vStorage APIs for Array Integration\) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
 ---
 = Installing the NetApp NFS Plug-in 2.0 for VMware VAAI
 :icons: font
