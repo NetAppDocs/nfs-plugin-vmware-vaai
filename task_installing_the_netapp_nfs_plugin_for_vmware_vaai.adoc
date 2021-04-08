@@ -11,6 +11,7 @@ summary: Installing the NFS Plug-in involves enabling VMware vStorage for NFS on
 [.lead]
 Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI ((VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
 
+.Before you begin
 * NFSv3 or NFSv4.1 must have been enabled on the storage system.
 +
 NOTE: NFSv4.1 is available only on ONTAP 9.0 systems and NFSv3 is available on both 7-Mode and Cluster-Mode systems.
@@ -19,6 +20,7 @@ NOTE: NFSv4.1 is available only on ONTAP 9.0 systems and NFSv3 is available on b
 
 For additional information about enabling NFS and using VMware vSphere, see the manuals listed in <<step10,Step 10>>.
 
+.About this task
 * If you are using the VMware ESXi CLI to install the plug-in, start with <<step1,Step 1>>.
 * If you are using Virtual Storage Console for VMware vSphere (VSC) to install the plug-in, start with <<step3,Step 3>>.
 +
@@ -35,27 +37,23 @@ VSC enables VMware vStorage for NFS on the storage controller and enables VAAI o
 .Steps
 . [[step1]]Enable VMware vStorage for NFS:
 +
+[cols=2*,options="header",cols="30,60"]
 |===
 | If you use the...| Then...
 a|
 ONTAP CLI
-a|
-Enable VMware vStorage for NFS on the SVM:
-+
+a|Enable VMware vStorage for NFS on the SVM:
 `vserver nfs modify –vserver vserver_name -vstorage enabled`
-+
 `<vserver_name>` is the name of the SVM.
 a|
 7-Mode CLI
 a|
 Enable VMware vStorage for NFS on the storage system:
-+
 `options nfs.vstorage.enable on`
 a|
 7-Mode CLI for vFiler units
 a|
 Enable the installation of NetApp NFS plug-in vStorage for NFS on the MultiStore vFiler unit hosting VMware NFS datastores:
-+
 `vfiler run vfiler_name options nfs.vstorage.enable on`
 |===
 
@@ -63,6 +61,7 @@ Enable the installation of NetApp NFS plug-in vStorage for NFS on the MultiStore
 +
 In VMware vSphere 5.0 and later, VAAI is enabled by default.
 +
+[cols=2*,options="header",cols="30,60"]
 |===
 | If you use the...| Then...
 a|
@@ -70,7 +69,8 @@ VMware ESXi CLI
 a|
 
  .. Verify that VAAI is enabled:
- `esxcfg-advcfg -g /DataMover/HardwareAcceleratedMove``esxcfg-advcfg -g /DataMover/HardwareAcceleratedInit`
+ `esxcfg-advcfg -g /DataMover/HardwareAcceleratedMove`
+ `esxcfg-advcfg -g /DataMover/HardwareAcceleratedInit`
 +
 If VAAI is enabled, these commands display the following output:
 +
@@ -82,7 +82,8 @@ Value of HardwareAcceleratedInit is **1**
 ----
 
  .. If VAAI is not enabled, enable VAAI:
- `esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedInit``esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedMove`
+ `esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedInit`
+ `esxcfg-advcfg -s 1 /DataMover/HardwareAcceleratedMove`
 +
 These commands display the following output:
 +
@@ -100,9 +101,7 @@ a|
  .. Log in to the vCenter Server.
  .. For each ESXi server, click the server name.
  .. In the Software section of the Configuration tab, click *Advanced Settings*.
- .. Select *DataMover*, and then verify that the DataMover.HardwareAcceleratedMove and DataMover.HardwareAcceleratedInit parameters are set to 1.
-
-+
+ .. Select *DataMover*, and then verify that the `DataMover.HardwareAcceleratedMove` and `DataMover.HardwareAcceleratedInit` parameters are set to 1.
 |===
 
 . [[step3]]Download the NetApp NFS Plug-in for VMware VAAI:
@@ -134,12 +133,13 @@ Skip this step if you are using Data ONTAP operating in 7-Mode.
 +
 You can use export policies to restrict access to volumes to specific clients. NFSv4 is required in the export policy for VAAI copy offloading to work, so you might need to modify the export policy rules for datastore volumes on SVMs. If you are using protocols other than NFS on a datastore, verify that setting NFS in the export rule does not remove those other protocols.
 +
+[cols=2*,options="header",cols="30,60"]
 |===
 | If you use...| Then...
 a|
 ONTAP CLI
 a|
-Set nfs as the access protocol for each export policy rule for ESXi servers that use VAAI:
+Set `nfs` as the access protocol for each export policy rule for ESXi servers that use VAAI:
 `vserver export-policy rule modify -vserver vs1 -policyname mypolicy -ruleindex 1 -protocol nfs -rwrule krb5\|krb5i\|any -rorule krb5\|krb5i\|any`
 
 In the following example:
@@ -176,13 +176,13 @@ The user interface does not specify that the datastore is VAAI enabled.
 +
 |===
 
-. If you are using Data ONTAP operating in 7-Mode, execute the exportfs command for exporting volume paths.
+. If you are using Data ONTAP operating in 7-Mode, execute the `exportfs` command for exporting volume paths.
 +
 Skip this step if you are using ONTAP.
 +
-For more information about the exportfs command, see the _Data ONTAP File Access and Protocols Management Guide for 7-Mode_ or the man pages.
+For more information about the `exportfs` command, see the _Data ONTAP File Access and Protocols Management Guide for 7-Mode_ or the man pages.
 +
-When exporting the volume, you can specify a host name or IP address, a subnet, or a netgroup. You can specify IP address, subnet, or hosts for both the rw and root options. For example:
+When exporting the volume, you can specify a host name or IP address, a subnet, or a netgroup. You can specify IP address, subnet, or hosts for both the `rw` and `root` options. For example:
 +
 ----
 sys1> exportfs -p root=192.168.42.227 /vol/VAAI
@@ -219,7 +219,7 @@ Connecting to NAS volume: onc_src
 /onc_src created and connected.
 ----
 +
-For systems running Data ONTAP operating in 7-Mode, the /vol prefix precedes the NFS volume name. The following example shows the 7-Mode command for mounting the datastore and the resulting output:
+For systems running Data ONTAP operating in 7-Mode, the `/vol` prefix precedes the NFS volume name. The following example shows the 7-Mode command for mounting the datastore and the resulting output:
 +
 ----
 ~ # esxcfg-nas -a vms_7m -o 192.168.42.69 -s /vol/vms_7m
@@ -245,6 +245,7 @@ onc_src is /onc_src from 192.168.42.80 mounted available
 Upon completion, the volume is mounted and available in the /vmfs/volumes directory.
 . [[step10]]Verify that the mounted datastore supports VAAI by using one of the following methods:
 +
+[cols=2*,options="header",cols="30,60"]
 |===
 | If you use...| Then...
 a|
@@ -298,7 +299,7 @@ For more information about working with NFS datastores and performing cloning op
 +
 http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-storage-guide.pdf[VMware vSphere Storage]
 
-. If you are using Data ONTAP operating in 7-Mode, execute the sis on command to enable the datastore volume for copy offloading and deduplication.
+. If you are using Data ONTAP operating in 7-Mode, execute the `sis on` command to enable the datastore volume for copy offloading and deduplication.
 +
 For ONTAP, view the efficiency details for a volume:
 +

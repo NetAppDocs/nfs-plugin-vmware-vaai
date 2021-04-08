@@ -26,14 +26,17 @@ You can configure different export policies for multiple conditions and protocol
 `vserver export-policy rule modify -vserver vserver name -policyname default -ruleindex rule index -protocol NFSv3\|NFSv4`
 
 . Modify the export policy to allow both NFSv3 and NFSv4 protocols with the following conditions:
++
 * You must have configured the export policy rule for the respective ESX server and the volume with all of the relevant access permissions.
++
 * You must have set the values of RW, RO, and Superuser to `SYS` or `ANY` for the client match.
++
 * You must have allowed the NFSv3 and NFSv4 protocol.
 +
 The Access Protocol in the export policy is set as follows:
 +
-
 ** Access Protocol = `nfs` (to include all versions of NFS)
++
 ** Access Protocol = `nfsv3`, `nfsv4` (NFSv3 for NFSv3 datastore access) and NFSv4 (NFSv4 for NFSv4.1 datastore access)).
 
 +
@@ -50,8 +53,7 @@ vmware  vmware_VAAI  vmware_access  /VAAI
 
 +
 ----
-cm3240c-rtp::> export-policy rule show -vserver vmware -policyname vmware_access
--ruleindex 2(vserver export-policy rule show)
+cm3240c-rtp::> export-policy rule show -vserver vmware -policyname vmware_access-ruleindex 2(vserver export-policy rule show)
 
 Vserver: vmware
 Policy Name: vmware_access
