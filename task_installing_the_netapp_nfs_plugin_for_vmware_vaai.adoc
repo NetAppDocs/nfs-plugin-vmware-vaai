@@ -24,12 +24,15 @@ For additional information about enabling NFS and using VMware vSphere, see the 
 +
 VSC enables VMware vStorage for NFS on the storage controller and enables VAAI on the ESXi host, which are steps <<STEP_C4A736BE1381467983A2507FF7063D95,1>> through <<STEP_4DA82DE131544EDEB60E6778459CFFBC,2>> of this procedure.
 
+* If you are using NetApp ONTAP tools for VMware vSphere to install the plug-in, start with <<STEP_7D4F96DBF2E9481383B97D773AD44F7D,Step 3>>.
+
 *IP address conventions used:*
 
 * IP addresses of the form 192.168.42.2xx refer to ESXi server VMkernel ports.
 * IP addresses of the form 192.168.42.6x refer to systems running Data ONTAP operating in 7-Mode.
 * IP addresses of the form 192.168.42.8x refer to storage virtual machines (SVMs, formerly known as Vservers) on ONTAP systems.
 
+.Steps
 . Enable VMware vStorage for NFS:
 +
 |===
@@ -256,6 +259,12 @@ For information about using VSC to provision NFS datastores and create clones of
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP12405914[Virtual Storage Console 6.0 for VMware vSphere Installation and Administration Guide]
 +
+For more information about using ONTAP tools for VMware vSphere to provision NFS datastores and create clones of virtual machines in the VMware environment, see the following guides:
++
+link:https://docs.netapp.com/vapp-98/topic/com.netapp.doc.vsc-dsg/home.html[ONTAP tools for VMware vSphere Deployment and Setup Guide]
++
+link:https://docs.netapp.com/vapp-98/topic/com.netapp.doc.vsc-iag/home.html[ONTAP tools for VMware vSphere Administration Guide]
++
 For more information about working with NFS datastores and performing cloning operations, see the following guide:
 +
 http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-storage-guide.pdf[VMware vSphere Storage]
@@ -268,7 +277,7 @@ NOTE: For AFF (AFF) systems, volume efficiency is enabled by default.
 +
 If the command output does not display any volumes with storage efficiency enabled, then enable efficiency: `volume efficiency on -vserver vserver_name -volume volume_name`
 +
-Skip this step if you are using VSC to set up the volumes because volume efficiency is enabled on the datastores by default.
+Skip this step if you are using VSC or ONTAP tools for VMware vSphere to set up the volumes because volume efficiency is enabled on the datastores by default.
 +
 ----
 
