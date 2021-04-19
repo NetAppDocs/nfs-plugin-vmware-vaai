@@ -125,7 +125,7 @@ The plug-in works automatically following the installation and reboot.
 +
 Using these commands ensures that the component remains compatible with the new vLCM feature of vSphere, available from 7.0x and later.
 
-. If you are installing the plug-in on a new system or on ONTAP, either create or modify export policy rules for the root volumes and for each NFS datastore volume on the ESXi servers that use VAAI.
+. If you are installing the plug-in on a new host system, or the server running ONTAP has been newly configured, either create or modify export policy rules for the root volumes and for each NFS datastore volume on the ESXi servers that use VAAI.
 +
 link:task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.md#[Configuring export policies for ONTAP to allow VAAI over NFS]
 +
