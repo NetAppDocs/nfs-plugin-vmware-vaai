@@ -1,13 +1,13 @@
 ---
 permalink: index.html
 sidebar: sidebar
-keywords: installation, guide, nfs, vaai, vmware, esxi
-summary: Provides instructions for installing the NetApp NFS Plug-in for VMware vStorage APIs for Array Integration (VAAI) on a VMware ESXi system.
+keywords: installation, guide, nfs, vaai, vmware, esxi, plug-in
+summary: "Provides instructions for installing the NetApp NFS Plug-in for VMware vStorage APIs for Array Integration (VAAI) on a VMware ESXi system."
 ---
-= Installation Guide
+= NetApp NFS Plug-in for VMware VAAI 2.0
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
 
-This guide provides instructions for installing the NetApp NFS Plug-in for VMware vStorage APIs for Array Integration (VAAI) on a VMware ESXi system.
+Welcome to the NetApp NFS Plug-in for VMware VAAI Information Library. Here you will find documentation on how to install the NetApp NFS Plug-in for VMware vStorage APIs for Array Integration (VAAI) on a VMware ESXi system.
