@@ -1,8 +1,8 @@
 ---
 permalink: task_installing_the_netapp_nfs_plugin_for_vmware_vaai.html
 sidebar: sidebar
-keywords: install, netapp, nfs, plug-in, vmware, vaai, involve, enabling, enable, netapp, vstorage, api, array, integration, installation, download
-summary: Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI \(\(VMware vStorage APIs for Array Integration\) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
+keywords: install, netapp, nfs, plug-in, vmware, vaai, involve, enable, netapp, vstorage, api, array, integration, installation, download
+summary: "Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI (VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful."
 ---
 = Installing the NetApp NFS Plug-in 2.0 for VMware VAAI
 :icons: font
@@ -11,7 +11,7 @@ summary: Installing the NFS Plug-in involves enabling VMware vStorage for NFS on
 [.lead]
 Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI ((VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
 
-.Before you begin
+== What you'll need
 * NFSv3 or NFSv4.1 must have been enabled on the storage system.
 +
 NOTE: NFSv4.1 is available only on ONTAP 9.0 systems and NFSv3 is available on both 7-Mode and Cluster-Mode systems.
@@ -20,7 +20,7 @@ NOTE: NFSv4.1 is available only on ONTAP 9.0 systems and NFSv3 is available on b
 
 For additional information about enabling NFS and using VMware vSphere, see the manuals listed in <<step10,Step 10>>.
 
-.About this task
+== About this task
 * If you are using the VMware ESXi CLI to install the plug-in, start with <<step1,Step 1>>.
 * If you are using Virtual Storage Console for VMware vSphere (VSC) to install the plug-in, start with <<step3,Step 3>>.
 +
@@ -34,7 +34,7 @@ VSC enables VMware vStorage for NFS on the storage controller and enables VAAI o
 * IP addresses of the form 192.168.42.6x refer to systems running Data ONTAP operating in 7-Mode.
 * IP addresses of the form 192.168.42.8x refer to storage virtual machines (SVMs, formerly known as Vservers) on ONTAP systems.
 
-.Steps
+== Steps
 . [[step1]]Enable VMware vStorage for NFS:
 +
 [cols=2*,options="header",cols="30,60"]
@@ -127,7 +127,7 @@ Using these commands ensures that the component remains compatible with the new 
 
 . If you are installing the plug-in on a new host system, or the server running ONTAP has been newly configured, either create or modify export policy rules for the root volumes and for each NFS datastore volume on the ESXi servers that use VAAI.
 +
-link:task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.md#[Configuring export policies for ONTAP to allow VAAI over NFS]
+link:task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html[Configuring export policies for ONTAP to allow VAAI over NFS]
 +
 Skip this step if you are using Data ONTAP operating in 7-Mode.
 +
@@ -333,7 +333,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP1401220[Data ONTAP 8.2 File Access and Protocols Management Guide for 7-Mode]
 
-.After you finish
+== After you finish
 Use the NFS plug-in space reservation and copy offload features to make routine tasks more efficient:
 
 * Create virtual machines in the thick virtual machine disk (VMDK) format on NetApp traditional volumes or FlexVol volumes, and reserve space for the file when you create it.

@@ -1,8 +1,8 @@
 ---
 permalink: task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html
 sidebar: sidebar
-keywords: configuring, configure, export, policies, policy, compliance, vmware, vstorage, api, array, integration, vaai, storage, feature, nfs, server, ontap, svm, vserver
-summary: You must configure export policies to provide compliance between VMware vStorage APIs for Array Integration \(VAAI\) storage features over the NFS server and NetApp storage. In ONTAP, volume exports are restricted by export policies that are applied on storage virtual machines \(SVMs, formerly known as Vservers\).
+keywords: configure, export, policies, policy, compliance, vmware, vstorage, api, array, integration, vaai, storage, feature, nfs, server, ontap, svm, vserver
+summary: "You must configure export policies to provide compliance between VMware vStorage APIs for Array Integration (VAAI) storage features over the NFS server and NetApp storage. In ONTAP, volume exports are restricted by export policies that are applied on storage virtual machines (SVMs, formerly known as Vservers)."
 ---
 = Configuring export policies for ONTAP to allow VAAI over NFS
 :icons: font
@@ -11,16 +11,16 @@ summary: You must configure export policies to provide compliance between VMware
 [.lead]
 You must configure export policies to provide compliance between VMware vStorage APIs for Array Integration (VAAI) storage features over the NFS server and NetApp storage. In ONTAP, volume exports are restricted by export policies that are applied on storage virtual machines (SVMs, formerly known as Vservers).
 
-.Before you begin
+== What you'll need
 * NFSv4 calls must be allowed by the relevant NFS volumes.
 * The root user must be retained as the primary user.
 * NFSv4 must be allowed on all of the interconnected parent volumes.
 * The option for VAAI support must be set on the relevant NFS server.
 
-.About this task
+== About this task
 You can configure different export policies for multiple conditions and protocols.
 
-.Steps
+== Steps
 . If an export policy is not created, then create an export policy for the SVM in the root volume of the VMware ESXi host that contains the SVM name, policy name, default rule index, protocol, and so on:
 +
 `vserver export-policy rule modify -vserver vserver name -policyname default -ruleindex rule index -protocol NFSv3\|NFSv4`
