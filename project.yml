@@ -16,7 +16,6 @@ sidebar:
     url: "/releasenotes.html"
   - title: Installing the NetApp NFS Plug-in 2.0 for VMware VAAI
     url: "/task_installing_the_netapp_nfs_plugin_for_vmware_vaai.html"
-    entries:
   - title: Configuring export policies for ONTAP to allow VAAI over NFS
     url: "/task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html"
   - title: Legal Notices
