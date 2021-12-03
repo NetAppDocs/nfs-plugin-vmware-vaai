@@ -18,6 +18,6 @@ sidebar:
     url: "/task_installing_the_netapp_nfs_plugin_for_vmware_vaai.html"
     entries:
   - title: Configuring export policies for ONTAP to allow VAAI over NFS
-      url: "/task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html"
+    url: "/task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html"
   - title: Legal Notices
     url: "/reference_legal_notices.html"
