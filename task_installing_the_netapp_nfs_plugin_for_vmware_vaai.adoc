@@ -12,7 +12,7 @@ summary: "Installing the NFS Plug-in involves enabling VMware vStorage for NFS o
 Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI ((VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
 
 == What you'll need
-* NFSv3 or NFSv4.1 must have been enabled on the storage system.
+* NFSv3 or NFSv4.1 must be enabled on the storage system.
 +
 NOTE: NFSv4.1 is available only on ONTAP 9.0 systems and NFSv3 is available on both 7-Mode and Cluster-Mode systems.
 
