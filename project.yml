@@ -1,6 +1,6 @@
 ---
 settings:
-  name: NetApp NFS Plug-in for VMware VAAI
+  name: NetApp NFS Plug-in for VMware VAAI 2.0
   internal:
     pdf_enabled: true
   prod:
