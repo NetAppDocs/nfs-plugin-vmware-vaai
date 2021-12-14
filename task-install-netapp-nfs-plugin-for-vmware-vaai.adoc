@@ -1,15 +1,15 @@
 ---
-permalink: task_installing_the_netapp_nfs_plugin_for_vmware_vaai.html
+permalink: task-install-netapp-nfs-plugin-for-vmware-vaai.html
 sidebar: sidebar
 keywords: install, netapp, nfs, plug-in, vmware, vaai, involve, enable, netapp, vstorage, api, array, integration, installation, download
 summary: "Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI (VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful."
 ---
-= Installing the NetApp NFS Plug-in 2.0 for VMware VAAI
+= Install NetApp NFS Plug-in for VMware VAAI
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI ((VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
+Installing the NFS Plug-in involves enabling VMware vStorage for NFS on the NetApp storage system, verifying that VAAI (VMware vStorage APIs for Array Integration) is enabled on the VMware host, downloading and installing the plug-in on the VMware ESXi host, and verifying that the installation is successful.
 
 == What you'll need
 * NFSv3 or NFSv4.1 must be enabled on the storage system.
@@ -26,7 +26,7 @@ For additional information about enabling NFS and using VMware vSphere, see the 
 +
 VSC enables VMware vStorage for NFS on the storage controller and enables VAAI on the ESXi host, which are steps <<step1,1>> through <<step2,2>> of this procedure.
 
-* If you are using NetApp ONTAP tools for VMware vSphere to install the plug-in, start with <<step3,Step 3>>.
+* If you are using ONTAP tools for VMware vSphere to install the plug-in, start with <<step3,Step 3>>.
 
 *IP address conventions used:*
 
@@ -127,7 +127,7 @@ Using these commands ensures that the component remains compatible with the new 
 
 . If you are installing the plug-in on a new host system, or the server running ONTAP has been newly configured, either create or modify export policy rules for the root volumes and for each NFS datastore volume on the ESXi servers that use VAAI.
 +
-link:task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html[Configuring export policies for ONTAP to allow VAAI over NFS]
+link:task-configuring-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html[Configure export policies for ONTAP to allow VAAI over NFS]
 +
 Skip this step if you are using Data ONTAP operating in 7-Mode.
 +

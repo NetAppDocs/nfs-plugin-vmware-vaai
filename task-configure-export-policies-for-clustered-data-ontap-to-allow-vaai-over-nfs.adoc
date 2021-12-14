@@ -1,10 +1,10 @@
 ---
-permalink: task_configuring_export_policies_for_clustered_data_ontap_to_allow_vaai_over_nfs.html
+permalink: task-configure-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html
 sidebar: sidebar
 keywords: configure, export, policies, policy, compliance, vmware, vstorage, api, array, integration, vaai, storage, feature, nfs, server, ontap, svm, vserver
 summary: "You must configure export policies to provide compliance between VMware vStorage APIs for Array Integration (VAAI) storage features over the NFS server and NetApp storage. In ONTAP, volume exports are restricted by export policies that are applied on storage virtual machines (SVMs, formerly known as Vservers)."
 ---
-= Configuring export policies for ONTAP to allow VAAI over NFS
+= Configure export policies for ONTAP to allow VAAI over NFS
 :icons: font
 :imagesdir: ./media/
 
