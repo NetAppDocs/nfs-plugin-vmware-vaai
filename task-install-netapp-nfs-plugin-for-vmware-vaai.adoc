@@ -127,7 +127,7 @@ Using these commands ensures that the component remains compatible with the new 
 
 . If you are installing the plug-in on a new host system, or the server running ONTAP has been newly configured, either create or modify export policy rules for the root volumes and for each NFS datastore volume on the ESXi servers that use VAAI.
 +
-link:task-configuring-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html[Configure export policies for ONTAP to allow VAAI over NFS]
+link:task-configure-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html[Configure export policies for ONTAP to allow VAAI over NFS]
 +
 Skip this step if you are using Data ONTAP operating in 7-Mode.
 +
