@@ -180,7 +180,7 @@ The user interface does not specify that the datastore is VAAI enabled.
 +
 Skip this step if you are using ONTAP.
 +
-For more information about the `exportfs` command, see the https://library.netapp.com/ecm/ecm_download_file/ECMP1401220[Data ONTAP File Access and Protocols Management Guide for 7-Mode].
+For more information about the `exportfs` command, see the https://library.netapp.com/ecm/ecm_download_file/ECMP1401220[Data ONTAP 8.2 File Access and Protocols Management Guide for 7-Mode].
 +
 When exporting the volume, you can specify a host name or IP address, a subnet, or a netgroup. You can specify IP address, subnet, or hosts for both the `rw` and `root` options. For example:
 +
@@ -275,29 +275,31 @@ a|.. Click *ESXi Server* > *Configuration* > *Storage*.
 |===
 For more information about VMware vStorage over NFS, see the following guides:
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[ONTAP 9 NFS Reference]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/home.html[ONTAP 9 NFS reference overview]
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP1401220[Data ONTAP 8.2 File Access and Protocols Management Guide for 7-Mode]
 +
 For details about configuring volumes and space in the volumes, see the following guides:
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[Logical storage management overview with the CLI]
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMP1368859[Data ONTAP 8.2 Storage Management Guide For 7-Mode]
+link:https://library.netapp.com/ecm/ecm_download_file/ECMP1368859[Data ONTAP 8.2 Storage Management Guide For 7-Mode]
++
+For more information about the VMware vSphere Lifecycle Manager, which can also be used to install and manage plugins on multiple hosts using the vCenter web client GUI, see the following:
++
+link:https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere-lifecycle-manager.doc/GUID-74295A37-E8BB-4EB9-BFBA-47B78F0C570D.html[About VMware vSphere Lifecycle Manager]
 +
 For information about using VSC to provision NFS datastores and create clones of virtual machines in the VMware environment, see the following guide:
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMP12405914[Virtual Storage Console 6.0 for VMware vSphere Installation and Administration Guide]
+link:https://library.netapp.com/ecmdocs/ECMLP2561116/html/index.html[Virtual Storage Console 6.2.1 for VMware vSphere Installation and Administration Guide]
 +
 For more information about using ONTAP tools for VMware vSphere to provision NFS datastores and create clones of virtual machines in the VMware environment, see the following guides:
 +
-link:https://docs.netapp.com/vapp-98/topic/com.netapp.doc.vsc-dsg/home.html[ONTAP tools for VMware vSphere Deployment and Setup Guide]
-+
-link:https://docs.netapp.com/vapp-98/topic/com.netapp.doc.vsc-iag/home.html[ONTAP tools for VMware vSphere Administration Guide]
+link:https://docs.netapp.com/vapp-98/topic/com.netapp.doc.vsc-dsg/home.html[ONTAP tools for VMware vSphere Documentation]
 +
 For more information about working with NFS datastores and performing cloning operations, see the following guide:
 +
-http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-storage-guide.pdf[VMware vSphere Storage]
+link:http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-storage-guide.pdf[VMware vSphere Storage]
 
 . If you are using Data ONTAP operating in 7-Mode, execute the `sis on` command to enable the datastore volume for copy offloading and deduplication.
 +
@@ -329,7 +331,7 @@ vs1        testvol1         Enabled  Idle         Idle for 00:00:06  -
 +
 For details about enabling deduplication on the datastore volumes, see the following guides.
 +
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide]
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[Logical storage management overview with the CLI]
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP1401220[Data ONTAP 8.2 File Access and Protocols Management Guide for 7-Mode]
 
