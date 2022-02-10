@@ -14,7 +14,7 @@ sidebar:
     url: "/index.html"
   - title: Release Notes
     url: "/releasenotes.html"
-  - title: Install and Configure
+  - title: Install and configure
     entries:
      - title: Install NetApp NFS Plug-in for VMware VAAI
        url: "/task-install-netapp-nfs-plugin-for-vmware-vaai.html"

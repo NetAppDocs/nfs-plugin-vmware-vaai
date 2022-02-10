@@ -1,7 +1,7 @@
 ---
 permalink: releasenotes.html
 sidebar: sidebar
-keywords: release, notes, new, features, fixed, issues, known, limitations, nfs, vmware, vaai, netapp, plug-in
+keywords: release, notes, new, features, fixed, issues, known, limitations, nfs, vmware, vaai, netapp, plugin
 summary: "Describes new features, upgrade notes, fixed issues, known limitations, and known issues."
 ---
 = NetApp NFS Plug-in for VMware VAAI Release Notes
