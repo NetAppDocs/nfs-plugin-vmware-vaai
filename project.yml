@@ -1,12 +1,14 @@
 ---
 settings:
+  pdf:
+    zip-level: 0
+    zip-filename: netapp-nfs-plugin-vaai-pdfs.zip
   name: NetApp NFS Plug-in for VMware VAAI
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
     harmony_enabled: true
-    langs: us-en,ja-jp,zh-cn
 sidebar:
 
   entries:
