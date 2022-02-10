@@ -1,9 +1,0 @@
----
-permalink: install-and-configure.html
-sidebar: sidebar
-keywords: install, configure, nfs, vmware, vaai, netapp, plug-in
-summary: "This section describes how to install and configure NetApp NFS Plug-in for VMware VAAI."
----
-= Install and configure
-
-This section describes how to install and configure NetApp NFS Plug-in for VMware VAAI.
