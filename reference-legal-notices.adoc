@@ -1,5 +1,5 @@
 ---
-permalink: reference_legal_notices.html
+permalink: reference-legal-notices.html
 sidebar: sidebar
 keywords: legal, notices, copyright, trademarks, patents
 summary: Legal notices provide access to copyright statements, trademarks, patents, and more.
@@ -10,23 +10,23 @@ Legal notices provide access to copyright statements, trademarks, patents, and m
 
 == Copyright
 
-http://www.netapp.com/us/legal/copyright.aspx
+http://www.netapp.com/us/legal/copyright.aspx[^]
 
 == Trademarks
 
 NETAPP, the NETAPP logo, and the marks listed on the NetApp Trademarks page are trademarks of NetApp, Inc. Other company and product names may be trademarks of their respective owners.
 
-http://www.netapp.com/us/legal/netapptmlist.aspx
+http://www.netapp.com/us/legal/netapptmlist.aspx[^]
 
 == Patents
 
 A current list of NetApp owned patents can be found at:
 
-https://www.netapp.com/us/media/patents-page.pdf
+https://www.netapp.com/us/media/patents-page.pdf[^]
 
 == Privacy policy
 
-https://www.netapp.com/us/legal/privacypolicy/index.aspx
+https://www.netapp.com/us/legal/privacypolicy/index.aspx[^]
 
 == Notice
 
