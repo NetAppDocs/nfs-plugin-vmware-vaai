@@ -1,0 +1,164 @@
+---
+permalink: task-configure-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html
+sidebar: sidebar
+keywords: configure, export, policies, policy, compliance, vmware, vstorage, api, array, integration, vaai, storage, feature, nfs, server, ontap, svm, vserver, vstorage
+summary: "You must configure export policies to provide compliance between VMware vStorage APIs for Array Integration (VAAI) storage features over the NFS server and NetApp storage. In ONTAP, volume exports are restricted by export policies that are applied on storage virtual machines (SVMs, formerly known as Vservers)."
+---
+= Configure export policies for ONTAP to allow VAAI over NFS
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+You must configure export policies to provide compliance between VMware vStorage APIs for Array Integration (VAAI) storage features over the NFS server and NetApp storage. In ONTAP, volume exports are restricted by export policies that are applied on storage virtual machines (SVMs, formerly known as Vservers).
+
+.Before you begin
+* NFSv4 calls must be allowed by the relevant NFS volumes.
+* The root user must be retained as the primary user.
+* NFSv4 must be allowed on all of the interconnected parent volumes.
+* The option for VAAI support must be set on the relevant NFS server.
+
+.About this task
+You can configure different export policies for multiple conditions and protocols.
+
+.Steps
+. If an export policy is not created, then create an export policy for the SVM in the root volume of the VMware ESXi host that contains the SVM name, policy name, default rule index, protocol, and so on:
++
+`vserver export-policy rule modify -vserver vserver name -policyname default -ruleindex rule index -protocol NFSv3\|NFSv4`
+
+. Modify the export policy to allow both NFSv3 and NFSv4 protocols with the following conditions:
++
+* You must have configured the export policy rule for the respective ESX server and the volume with all of the relevant access permissions.
++
+* You must have set the values of RW, RO, and Superuser to `SYS` or `ANY` for the client match.
++
+* You must have allowed the NFSv3 and NFSv4 protocol.
++
+The Access Protocol in the export policy is set as follows:
++
+** Access Protocol = `nfs` (to include all versions of NFS)
++
+** Access Protocol = `nfsv3`, `nfsv4` (NFSv3 for NFSv3 datastore access) and NFSv4 (NFSv4 for NFSv4.1 datastore access)).
+
++
+The following commands display the SVM details and set the export policy:
+
++
+----
+cm3240c-rtp::> vol show -vserver vmware -volume vmware_VAAI -fields policy (volume
+show)
+vserver volume       policy         junction-path
+------- ------       -------        -------------
+vmware  vmware_VAAI  vmware_access  /VAAI
+----
+
++
+----
+cm3240c-rtp::> export-policy rule show -vserver vmware -policyname vmware_access-ruleindex 2(vserver export-policy rule show)
+
+Vserver: vmware
+Policy Name: vmware_access
+Rule Index: 1
+Access Protocol: nfs3,nfs4 (can also be nfs for NFSv3)
+Client Match Spec: 192.168.1.6
+RO Access Rule: sys
+RW Access Rule: sys
+User ID To Which Anonymous Users Are Mapped: 65534
+Superuser Security Flavors: sys
+Honor SetUID Bits In SETATTR: true
+Allow Creation of Devices: true
+----
+
++
+Any policy change is applied to all of the volumes using the relevant policy and is not restricted to the NFS datastore volumes.
+
+. Modify the export policy to set the Superuser as SYS with the following conditions:
+
+* You must have configured all of the parent volumes in the junction path with read access permission to the root volume, NFSv4 access, and VAAI access to the junction volume.
++
+The Superuser of the root volume for the SVM is set to SYS for the relevant client.
+
+* You must have denied write access permission for the SVM root volume. The following commands display the SVM details and set the export policy:
++
+----
+cm3240c-rtp::> vol show -vserver vmware -volume vmware_root -fields policy,
+junction-path (volume show)
+vserver volume policy  junction-path
+------- ------ ------- -------------
+vmware  vmware_root  root_policy /
+----
++
+----
+
+cm3240c-rtp::> export-policy rule show -vserver vmware -policyname root_policy
+-ruleindex 1 (vserver export-policy rule show)
+
+Vserver: vmware
+Policy Name: root_policy
+Rule Index: 1
+Access Protocol: nfs  <--- as in scenario 1, set to nfs or nfs3,nfs4
+Client Match Spec: 192.168.1.5
+RO Access Rule: sys
+RW Access Rule: never  <--- this can be never for security reasons
+User ID To Which Anonymous Users Are Mapped: 65534
+Superuser Security Flavors: sys   <--- this is required for VAAI to be set, even
+in the parent volumes like vsroot
+Honor SetUID Bits In SETATTR: true
+Allow Creation of Devices: true
+----
++
+The root user is retained because the Superuser is set to SYS. Therefore, the root user can access the volume that has the junction path /VAAI.
++
+If additional volumes exist in the junctions between the root volume and the vmware_VAAI volume, then those volumes should have a policy rule for the respective client, where the Superuser is set to SYS or ANY.
++
+In most cases, the root volume uses a policy with the Policy Name set to default.
++
+Any policy change is applied to all of the volumes using the relevant policy and is not restricted to the root volume.
+. Enable the vStorage feature: `nfs modify -vserver vserver_name vmware -vstorage enabled`
++
+The NFS service on the SVM requires enabling the vStorage feature.
+
+. Verify that the vStorage feature is enabled:
++
+`nfs show -fields vstorage`
++
+The output should display `enabled`:
++
+----
+cm3240c-rtp::> nfs show -fields vstorage
+vserver vstorage
+------- --------
+vmware  enabled
+----
+
+. Create the export policy:
++
+`vserver export-policy rule create`
++
+The following commands create the export policy rule:
++
+----
+User1-vserver2::> protocol export-policy rule create -vserver vs1
+-policyname default -clientmatch 0.0.0.0/0 -rorule any -rwrule any -superuser
+any -anon 0
+
+User1-vserver2::> export-policy rule show vserver export-policy rule show)
+Virtual      Policy          Rule    Access   Client                RO
+Server       Name            Index   Protocol Match                 Rule
+------------ --------------- ------  -------- --------------------- ---------
+vs1          default         1       any      0.0.0.0/0             any
+
+User1-vserver2::>
+----
+
+. Display the export policy:
++
+`vserver export-policy show`
++
+The following commands display the export policy:
++
+----
+User1-vserver2::> export-policy show (vserver export-policy show)
+Virtual Server   Policy Name
+---------------  -------------------
+vs1              default
+----

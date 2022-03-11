@@ -5,5 +5,19 @@ settings:
     pdf_enabled: true
   prod:
     pdf_enabled: true
+    harmony_enabled: true
 sidebar:
-  
+
+  entries:
+  - title: NetApp NFS Plug-in for VMware VAAI docs
+    url: "/index.html"
+  - title: Release Notes
+    url: "/releasenotes.html"
+  - title: Install and configure
+    entries:
+     - title: Install NetApp NFS Plug-in for VMware VAAI
+       url: "/task-install-netapp-nfs-plugin-for-vmware-vaai.html"
+     - title: Configure export policies for ONTAP to allow VAAI over NFS
+       url: "/task-configure-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html"
+  - title: Legal Notices
+    url: "/reference-legal-notices.html"
