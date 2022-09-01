@@ -121,7 +121,12 @@ a|
 .. Verify the signed image with the public key:
 +
 `openssl dgst -sha256 -verify csc-prod-CFSG-NFS-Plugin.pub -signature /tmp/NetAppNasPluginSig<version>.vib /tmp/NetAppNasPlugin<version>.vib`
-
++
+The following output is displayed: 
++
+----
+Verified OK
+----
 . Install the plug-in on the ESXi host using the following command:
 +
 `esxcli software component apply -d /<tmp>/<or>/<some_path\>/<downloaded-plugin-file-version\>.zip`
