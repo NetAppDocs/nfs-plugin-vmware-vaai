@@ -126,7 +126,7 @@ This zip contains the following:
 +
 `openssl x509 -in csc-prod-CFSG-NFS-Plugin.pem -pubkey -noout > csc-prod-CFSG-NFS-Plugin.pub`
 +
-`csc-prod-CFSG-NFS-Plugin.pem` is the certificate chain present in `<downloaded-plugin-file-version\>.zip`
+`csc-prod-CFSG-NFS-Plugin.pem` is the certificate chain present in `NetAppNasPlugin-<version>.Signed.zip`
 +
 `csc-prod-CFSG-NFS-Plugin.pub` is a public key.
 
