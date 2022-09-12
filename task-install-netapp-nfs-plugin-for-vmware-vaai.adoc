@@ -132,7 +132,7 @@ This zip contains the following:
 
 .. Verify the signed image with the public key:
 +
-`openssl dgst -sha256 -verify csc-prod-CFSG-NFS-Plugin.pub -signature /tmp/NetAppNasPluginSig<version>.vib /tmp/NetAppNasPlugin<version>.vib`
+`openssl dgst -sha256 -verify csc-prod-CFSG-NFS-Plugin.pub -signature /tmp/ NetAppNasPlugin-<version>.zip.sig  /tmp/NetAppNasPlugin-<version>.zip`
 +
 If verification is successful, the following output is displayed:
 +
@@ -144,11 +144,11 @@ Verified OK
 `esxcli software component apply -d   /tmp/<some_path>/NetAppNasPlugin-<version>.zip`
 +
 where `<some_path>` is the path to the location of the downloaded file and `NetAppNasPlugin-<version>.zip` is contained in the downloaded zip.
-. Run the following commands to complete the installation:
++
+.. Complete the installation:
 +
 `/etc/init.d/vaai-nasd start`
-+
-`/etc/init.d/vaai-nasd stop`
+
 . Verify that the plug-in was successfully installed on the host at the VMware ESXi command line:
 +
 `esxcli software component list`
