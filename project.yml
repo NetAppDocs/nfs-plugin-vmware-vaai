@@ -6,8 +6,8 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
-sidebar:
 
+sidebar:
   entries:
   - title: NetApp NFS Plug-in for VMware VAAI docs
     url: "/index.html"
