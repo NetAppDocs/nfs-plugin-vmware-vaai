@@ -139,15 +139,18 @@ If verification is successful, the following output is displayed:
 ----
 Verified OK
 ----
-. Install the plug-in on the ESXi host by running  the following commands:
+. Install the plug-in on the ESXi host by running the following commands:
 +
 `/etc/init.d/vaai-nasd stop`
 +
 `esxcli software component apply -d   /tmp/<some_path>/NetAppNasPlugin-<version>.zip`
 +
-where `<some_path>` is the path to the location of the downloaded file and `NetAppNasPlugin-<version>.zip` is contained in the downloaded zip.
-+
 `/etc/init.d/vaai-nasd start`
++
+`<some_path>` is the path to the location of the downloaded file.
++
+`NetAppNasPlugin-<version>.zip` is contained in the downloaded zip.
+
 
 . Verify that the plug-in was successfully installed on the host at the VMware ESXi command line:
 +
