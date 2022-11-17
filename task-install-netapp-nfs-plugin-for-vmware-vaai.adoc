@@ -114,7 +114,7 @@ a|
 +
 `NetAppNasPlugin-<version>.Signed.zip`
 +
-This zip contains the following:
+This zip contains the following files:
 +
 * `NetAppNasPlugin-<version>.zip`
 +
@@ -126,9 +126,9 @@ This zip contains the following:
 +
 `openssl x509 -in csc-prod-CFSG-NFS-Plugin.pem -pubkey -noout > csc-prod-CFSG-NFS-Plugin.pub`
 +
-`csc-prod-CFSG-NFS-Plugin.pem` is the certificate chain present in `NetAppNasPlugin-<version>.Signed.zip`
+* `csc-prod-CFSG-NFS-Plugin.pem` is the certificate chain present in `NetAppNasPlugin-<version>.Signed.zip`
 +
-`csc-prod-CFSG-NFS-Plugin.pub` is a public key.
+* `csc-prod-CFSG-NFS-Plugin.pub` is a public key.
 
 .. Verify the signed image with the public key:
 +
@@ -147,9 +147,9 @@ Verified OK
 +
 `/etc/init.d/vaai-nasd start`
 +
-`<some_path>` is the path to the location of the downloaded file.
+* `<some_path>` is the path to the location of the downloaded file.
 +
-`NetAppNasPlugin-<version>.zip` is contained in the downloaded zip.
+* `NetAppNasPlugin-<version>.zip` is contained in the downloaded zip.
 
 
 . Verify that the plug-in was successfully installed on the host at the VMware ESXi command line:
