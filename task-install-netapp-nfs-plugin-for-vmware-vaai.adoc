@@ -107,16 +107,51 @@ a|
 . [[step3]]Download the NetApp NFS Plug-in for VMware VAAI:
  .. Go to the Download page at https://mysupport.netapp.com/site/products/all/details/nfsplugin-vmware-vaai/downloads-tab[NetApp NFS Plug-in for VMware VAAI downloads^].
  .. Download the latest software release for 2.0 and vSphere 7.0U1 and later.
-. Install the plug-in on the ESXi host using the following command:
+
+. Verify the binary with the signed image and the public key:
 +
-`esxcli software component apply -d /<tmp>/<or>/<some_path\>/<downloaded-plugin-file-version\>.zip`
+.. Download the following zip to the `/tmp` folder:
 +
-where `<some_path>` is the path to the location of the downloaded file and `<downloaded-plugin-file-version>` is the name of the downloaded file.
-. Run the following commands to complete the installation:
+`NetAppNasPlugin-<version>.Signed.zip`
++
+This zip contains the following files:
++
+* `NetAppNasPlugin-<version>.zip`
++
+* `NetAppNasPlugin-<version>.zip.sig`
++
+* `csc-prod-CFSG-NFS-Plugin.pem`
++
+.. Obtain the public key from the certificate chain by using the following command:
++
+`openssl x509 -in csc-prod-CFSG-NFS-Plugin.pem -pubkey -noout > csc-prod-CFSG-NFS-Plugin.pub`
++
+* `csc-prod-CFSG-NFS-Plugin.pem` is the certificate chain present in `NetAppNasPlugin-<version>.Signed.zip`
++
+* `csc-prod-CFSG-NFS-Plugin.pub` is a public key
+
+.. Verify the signed image with the public key:
++
+`openssl dgst -sha256 -verify csc-prod-CFSG-NFS-Plugin.pub -signature /tmp/ NetAppNasPlugin-<version>.zip.sig  /tmp/NetAppNasPlugin-<version>.zip`
++
+If verification is successful, the following output is displayed:
++
+----
+Verified OK
+----
+. Install the plug-in on the ESXi host by running the following commands:
++
+`/etc/init.d/vaai-nasd stop`
++
+`esxcli software component apply -d   /tmp/<some_path>/NetAppNasPlugin-<version>.zip`
 +
 `/etc/init.d/vaai-nasd start`
 +
-`/etc/init.d/vaai-nasd stop`
+* `<some_path>` is the path to the location of the downloaded file
++
+* `NetAppNasPlugin-<version>.zip` is contained in the downloaded zip
+
+
 . Verify that the plug-in was successfully installed on the host at the VMware ESXi command line:
 +
 `esxcli software component list`
