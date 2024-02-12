@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/nfs-plugin-vmware-vaai/</loc>
+        
+      
+      <lastmod>2021-12-21T18:22:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/nfs-plugin-vmware-vaai/reference-legal-notices.html</loc>
+        
+      
+      <lastmod>2022-02-10T10:46:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/nfs-plugin-vmware-vaai/releasenotes.html</loc>
+        
+      
+      <lastmod>2022-02-10T19:31:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/nfs-plugin-vmware-vaai//search.html</loc>
+        
+      
+      <lastmod>2024-02-12T00:44:09+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/nfs-plugin-vmware-vaai/task-configure-export-policies-for-clustered-data-ontap-to-allow-vaai-over-nfs.html</loc>
+        
+      
+      <lastmod>2022-03-11T11:12:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/nfs-plugin-vmware-vaai/task-install-netapp-nfs-plugin-for-vmware-vaai.html</loc>
+        
+      
+      <lastmod>2023-01-13T15:49:12+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
