@@ -332,7 +332,7 @@ link:https://docs.netapp.com/vapp-98/topic/com.netapp.doc.vsc-dsg/home.html[ONTA
 +
 For more information about working with NFS datastores and performing cloning operations, see the following:
 +
-link:http://pubs.vmware.com/vsphere-60/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-60-storage-guide.pdf[VMware vSphere Storage^]
+link:https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage.html[VMware vSphere Storage^]
 
 . If you are using Data ONTAP operating in 7-Mode, execute the `sis on` command to enable the datastore volume for copy offloading and deduplication.
 +
